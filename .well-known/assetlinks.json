@@ -1,0 +1,9 @@
+[{
+  "relation": ["delegate_permission/common.handle_all_urls"],
+  "target": {
+    "namespace": "android_app",
+    "package_name": "com.docsearch.pro",
+    "sha256_cert_fingerprints":
+    ["59:0E:CA:CC:A3:00:99:AB:DE:39:B5:07:87:E1:8C:7A:CB:70:4E:22:C0:D6:91:06:45:B5:CE:DD:70:DF:9E:C4"]
+  }
+}]
