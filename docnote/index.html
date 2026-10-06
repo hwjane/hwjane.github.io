@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Paste your Google Search Console verification meta tag here if required -->
-    <!-- <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE_HERE" /> -->
     <title>DocNote - Fast, Offline Document Search & Smart Notes</title>
     <link rel="icon" type="image/png" href="logo.png">
     <style>
@@ -17,7 +15,6 @@
             --bg-light: #f8fafc;
             --card-bg: #ffffff;
             --border-color: #e2e8f0;
-            --accent-green: #10b981;
         }
         * {
             box-sizing: border-box;
@@ -38,7 +35,7 @@
             z-index: 100;
         }
         .nav-container {
-            max-width: 1100px;
+            max-width: 1040px;
             margin: 0 auto;
             display: flex;
             justify-content: space-between;
@@ -55,10 +52,10 @@
             font-size: 1.25rem;
         }
         .brand img {
-            width: 40px;
-            height: 40px;
+            width: 38px;
+            height: 38px;
             border-radius: 8px;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+            box-shadow: 0 2px 5px rgba(0,0,0,0.08);
         }
         nav a {
             color: var(--text-muted);
@@ -77,7 +74,7 @@
             text-align: center;
         }
         .hero-container {
-            max-width: 800px;
+            max-width: 760px;
             margin: 0 auto;
         }
         .hero-logo {
@@ -102,8 +99,8 @@
         .btn {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            padding: 0.85rem 1.75rem;
+            gap: 10px;
+            padding: 0.9rem 1.85rem;
             border-radius: 10px;
             font-weight: 600;
             text-decoration: none;
@@ -119,14 +116,14 @@
             transform: translateY(-1px);
         }
         .section-container {
-            max-width: 960px;
+            max-width: 1040px;
             margin: 0 auto;
-            padding: 4rem 1.5rem;
+            padding: 3.5rem 1.5rem;
         }
         .section-title {
             font-size: 2rem;
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin-bottom: 0.75rem;
             text-align: center;
         }
         .section-subtitle {
@@ -136,7 +133,7 @@
         }
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
             gap: 1.5rem;
         }
         .feature-card {
@@ -148,7 +145,7 @@
         }
         .feature-icon {
             font-size: 2rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.85rem;
             display: inline-block;
         }
         .feature-card h3 {
@@ -159,56 +156,23 @@
             color: var(--text-muted);
             font-size: 0.95rem;
         }
-        .legal-card {
-            background: var(--card-bg);
+        .about-card {
+            background: #ffffff;
             border: 1px solid var(--border-color);
-            border-radius: 16px;
+            border-radius: 14px;
             padding: 2.5rem;
-            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
-            margin-bottom: 2.5rem;
+            margin-top: 2rem;
+            text-align: center;
         }
-        .legal-card h2 {
-            font-size: 1.75rem;
-            margin-bottom: 0.5rem;
-            color: var(--text-dark);
-        }
-        .legal-card .updated-date {
-            color: var(--text-muted);
-            font-size: 0.875rem;
-            margin-bottom: 2rem;
-            display: block;
-        }
-        .legal-card h3 {
-            font-size: 1.25rem;
-            margin: 1.75rem 0 0.75rem;
-            color: var(--text-dark);
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 0.5rem;
-        }
-        .legal-card p, .legal-card ul {
-            color: #334155;
-            font-size: 1rem;
+        .about-card h3 {
+            font-size: 1.5rem;
             margin-bottom: 1rem;
         }
-        .legal-card ul {
-            padding-left: 1.5rem;
-        }
-        .legal-card li {
-            margin-bottom: 0.5rem;
-        }
-        .highlight-box {
-            background: #f0fdf4;
-            border: 1px solid #bbf7d0;
-            border-radius: 10px;
-            padding: 1.25rem;
-            margin: 1.25rem 0;
-        }
-        .highlight-box h4 {
-            color: #166534;
-            margin-bottom: 0.5rem;
-            display: flex;
-            align-items: center;
-            gap: 6px;
+        .about-card p {
+            max-width: 720px;
+            margin: 0 auto 1.5rem;
+            color: var(--text-muted);
+            font-size: 1.05rem;
         }
         footer {
             background: #0f172a;
@@ -216,6 +180,7 @@
             padding: 3rem 1.5rem;
             text-align: center;
             font-size: 0.9rem;
+            margin-top: 3rem;
         }
         footer a {
             color: #cbd5e1;
@@ -227,8 +192,7 @@
         }
         @media (max-width: 640px) {
             .hero h1 { font-size: 2rem; }
-            nav a { margin-left: 0.85rem; font-size: 0.85rem; }
-            .legal-card { padding: 1.5rem; }
+            nav a { margin-left: 0.75rem; font-size: 0.85rem; }
         }
     </style>
 </head>
@@ -236,15 +200,14 @@
 
     <header>
         <div class="nav-container">
-            <a href="#" class="brand">
+            <a href="index.html" class="brand">
                 <img src="data:image/png;base64,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" alt="DocNote Logo">
                 <span>DocNote</span>
             </a>
             <nav>
                 <a href="#features">Features</a>
-                <a href="#privacy">Privacy Policy</a>
-                <a href="#terms">Terms of Service</a>
-                <a href="#contact">Contact</a>
+                <a href="#about">About</a>
+                <a href="privacy.html">Privacy Policy</a>
             </nav>
         </div>
     </header>
@@ -256,7 +219,7 @@
             <p>A fast, lightweight, and offline-first document search and note management application for Android.</p>
             <div>
                 <a href="https://play.google.com/store/apps/details?id=com.adoc.pro" target="_blank" class="btn btn-primary">
-                    <span>Get on Google Play</span>
+                    <span>&#9654; Get on Google Play</span>
                 </a>
             </div>
         </div>
@@ -264,7 +227,7 @@
 
     <section id="features" class="section-container">
         <h2 class="section-title">Key Features</h2>
-        <p class="section-subtitle">Everything you need for efficient text and document management.</p>
+        <p class="section-subtitle">Designed to help you take, organize, and retrieve notes efficiently.</p>
         
         <div class="features-grid">
             <div class="feature-card">
@@ -275,12 +238,12 @@
             <div class="feature-card">
                 <div class="feature-icon">&#127991;</div>
                 <h3>Tag & File Organization</h3>
-                <p>Easily categorize notes with multi-level tags, favorite folders, and streamlined batch actions.</p>
+                <p>Categorize notes with multi-level tags, favorite folders, and streamlined batch actions.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">&#128247;</div>
                 <h3>OCR Text Recognition</h3>
-                <p>Extract text effortlessly from photos and camera captures with custom crop region memory.</p>
+                <p>Extract text from photos and camera captures with custom crop region memory.</p>
             </div>
             <div class="feature-card">
                 <div class="feature-icon">&#9729;</div>
@@ -288,79 +251,20 @@
                 <p>Securely backup and restore notes directly to your personal Google Drive account at any time.</p>
             </div>
         </div>
-    </section>
 
-    <section id="privacy" class="section-container">
-        <div class="legal-card">
-            <h2>Privacy Policy</h2>
-            <span class="updated-date">Effective Date: October 6, 2026</span>
-
-            <p>Welcome to <strong>DocNote</strong> ("we", "our", or "the App"), developed by Li Jane. We value your privacy and are committed to protecting your personal information. This Privacy Policy explains how our application collects, uses, and safeguards your data.</p>
-
-            <h3>1. Data Storage & Offline-First Principle</h3>
-            <p>DocNote is designed as an offline-first application. All your notes, tags, attachments, and settings are stored locally on your device. We do not operate proprietary cloud servers to collect, upload, or monetize your note contents.</p>
-
-            <h3>2. Google Drive Integration & User Data</h3>
-            <p>The App provides an optional cloud backup and restore feature using the Google Drive API. When you choose to use this feature, the App interacts with Google Drive subject to the following rules:</p>
-            
-            <div class="highlight-box">
-                <h4>&#128737; Google API Services User Data Policy Compliance</h4>
-                <p>DocNote's use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" style="color: #15803d; font-weight: 600;">Google API Services User Data Policy</a>, including the <strong>Limited Use</strong> requirements.</p>
-            </div>
-
-            <ul>
-                <li><strong>Scope of Access:</strong> We request only the permissions necessary to create, read, and update backup zip archives explicitly generated by DocNote (using dedicated application storage / <code>drive.file</code> scope). We do not read, modify, or access any unrelated files in your Google Drive.</li>
-                <li><strong>Purpose of Access:</strong> The access is strictly used to create archive backups of your notes and restore them onto your device upon your request.</li>
-                <li><strong>No Third-Party Sharing:</strong> Your Google account information, credentials, and backup files are never transmitted to any third-party servers, advertisers, or external services. All transfers occur directly between your device and Google's official Drive servers via HTTPS.</li>
-                <li><strong>No AI Model Training:</strong> Your Google user data is never used to develop, improve, or train generalized artificial intelligence or machine learning models.</li>
-            </ul>
-
-            <h3>3. Device Permissions Used</h3>
-            <ul>
-                <li><strong>Storage / Photos / Media:</strong> Required solely to read documents, save exported notes, and attach files as specified by the user.</li>
-                <li><strong>Camera:</strong> Optional; used only when you choose to capture documents or photos for OCR text extraction.</li>
-                <li><strong>Internet:</strong> Used exclusively for Google Drive backup/restore synchronization and standard ad network services (if applicable).</li>
-            </ul>
-
-            <h3>4. Data Retention and Revocation</h3>
-            <p>You have complete control over your data:</p>
-            <ul>
-                <li>You can delete your local notes and backup files from within the app at any time.</li>
-                <li>You can disconnect and revoke DocNote's access to your Google Drive account anytime through your <a href="https://myaccount.google.com/permissions" target="_blank" style="color: var(--primary);">Google Account Security Settings</a>.</li>
-            </ul>
-
-            <h3 id="contact">5. Contact Us</h3>
-            <p>If you have any questions, suggestions, or concerns regarding this Privacy Policy or your data, please contact us at:</p>
-            <p><strong>Developer:</strong> Li Jane<br>
-            <strong>Email:</strong> <a href="mailto:hwjane@gmail.com" style="color: var(--primary);">hwjane@gmail.com</a><br>
-            <strong>Application:</strong> DocNote (Package: <code>com.adoc.pro</code>)</p>
-        </div>
-
-        <div id="terms" class="legal-card">
-            <h2>Terms of Service</h2>
-            <span class="updated-date">Effective Date: October 6, 2026</span>
-
-            <h3>1. Acceptance of Terms</h3>
-            <p>By downloading, installing, or using DocNote, you agree to be bound by these Terms of Service. If you do not agree to these terms, please do not use the application.</p>
-
-            <h3>2. License & Proper Use</h3>
-            <p>DocNote grants you a personal, non-transferable, and revocable license to use the app for personal and productivity purposes. You agree not to reverse engineer or use the service for unlawful activities.</p>
-
-            <h3>3. Backup & Data Responsibility</h3>
-            <p>While DocNote offers local and cloud backup tools, users are advised to maintain independent backups of critical records. The developer is not liable for data loss caused by hardware malfunctions or account access issues.</p>
-
-            <h3>4. Changes to Terms</h3>
-            <p>We may update these terms periodically. Continued use of the application indicates acceptance of any revised terms.</p>
+        <div id="about" class="about-card">
+            <h3>Privacy-First Architecture</h3>
+            <p>DocNote operates locally on your device. We do not track your note contents, and cloud backups are saved directly to your personal Google Drive without passing through third-party servers.</p>
+            <a href="privacy.html" class="btn" style="background: var(--primary-light); color: var(--primary);">View Privacy Policy &rarr;</a>
         </div>
     </section>
 
     <footer>
         <p>&copy; 2026 DocNote. All rights reserved.</p>
         <p style="margin-top: 0.5rem;">
-            <a href="#">Home</a> &bull; 
+            <a href="index.html">Home</a> &bull; 
             <a href="#features">Features</a> &bull; 
-            <a href="#privacy">Privacy Policy</a> &bull; 
-            <a href="#terms">Terms of Service</a>
+            <a href="privacy.html">Privacy Policy</a>
         </p>
     </footer>
 
