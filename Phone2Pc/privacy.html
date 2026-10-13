@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Privacy Policy - Phone2Pc</title>
+    <title>Privacy Policy - Phone2PC</title>
     <style>
         :root {
             --primary: #0284c7;
@@ -144,6 +144,18 @@
             margin-bottom: 0;
             font-size: 0.95rem;
         }
+        .notice-box {
+            background: #f8fafc;
+            border-left: 4px solid var(--primary);
+            border-radius: 0 10px 10px 0;
+            padding: 1.1rem 1.35rem;
+            margin: 1.25rem 0;
+        }
+        .notice-box p {
+            margin-bottom: 0;
+            font-size: 0.95rem;
+            color: #334155;
+        }
         .contact-box {
             background: #f8fafc;
             border: 1px solid var(--border-color);
@@ -184,7 +196,7 @@
                         <rect x="15" y="10" width="6" height="10" rx="1" fill="#ffffff" stroke="var(--primary)" stroke-width="1.5"/>
                     </svg>
                 </div>
-                <span>Phone2Pc</span>
+                <span>Phone2PC</span>
             </a>
             <a href="index.html" class="back-link">&larr; Back to Home</a>
         </div>
@@ -195,57 +207,62 @@
             <div class="policy-header">
                 <h1>Privacy Policy</h1>
                 <div class="policy-meta">
-                    Application: <strong>Phone2Pc</strong> &bull; Effective Date: October 13, 2026
+                    Application: <strong>Phone2PC</strong> &bull; Effective Date: October 13, 2026
                 </div>
             </div>
 
-            <p>Welcome to <strong>Phone2Pc</strong> ("we", "our", or "the App"), developed by Li Jane. We value your trust and are strictly committed to safeguarding your personal privacy. This Privacy Policy details the types of information handled by Phone2Pc, the purposes for which data is used, and how your privacy is protected.</p>
+            <p>Welcome to <strong>Phone2PC</strong> ("we", "our", or "the App"), developed by Li Jane. We value your trust and are strictly committed to safeguarding your personal privacy. This Privacy Policy outlines how Phone2PC handles data during peer-to-peer transmissions and cloud-assisted transit operations.</p>
 
-            <h2>1. Architecture & Local Data Privacy</h2>
-            <p>Phone2Pc is designed to connect your mobile device and computer directly or through your personal cloud accounts. All transfer operations, clipboard synchronization, and temporary transmission caches remain entirely under your control. We do not host proprietary central relay servers that inspect, monitor, store, sell, or monetize your transmitted content.</p>
+            <h2>1. Primary Architecture: Local Peer-to-Peer (P2P) Direct Transfer</h2>
+            <p>Phone2PC is fundamentally built around a direct local area network (LAN) architecture. When your phone and PC are connected to the same Wi-Fi network, files and text clips are transferred directly between your devices over local HTTP protocols. In this mode, no data ever leaves your local network, and no cloud accounts or internet connections are used.</p>
 
-            <h2>2. Google Drive Integration & User Data Protection</h2>
-            <p>Phone2Pc provides an optional cloud relay and backup feature utilizing the Google Drive API. When you link your Google Account to enable cloud sync between your phone and PC, the following strict guidelines apply:</p>
+            <h2>2. Google Drive: Asynchronous Transit Relay (Not a Backup Service)</h2>
+            <p>When devices are on different networks (e.g., cellular data vs. home Wi-Fi) or cannot establish a real-time peer-to-peer connection, Phone2PC provides an optional asynchronous cloud relay mechanism utilizing the Google Drive API.</p>
+
+            <div class="notice-box">
+                <p><strong>Important Clarification on Google Drive Usage:</strong><br>
+                Google Drive in Phone2PC is used strictly as an <strong>intermediate transit medium</strong> (asynchronous mailbox relay) to bridge non-instantaneous file and text exchanges between your paired devices. It is <strong>NOT</strong> intended, designed, or used as a permanent cloud backup, long-term archiving, or secondary file storage service.</p>
+            </div>
 
             <div class="highlight-box">
                 <h3>&#128737; Google API Services User Data Policy Compliance</h3>
-                <p>Phone2Pc's use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" style="color: #15803d; font-weight: 700; text-decoration: underline;">Google API Services User Data Policy</a>, including the <strong>Limited Use</strong> requirements.</p>
+                <p>Phone2PC's use and transfer to any other app of information received from Google APIs will adhere to the <a href="https://developers.google.com/terms/api-services-user-data-policy" target="_blank" style="color: #15803d; font-weight: 700; text-decoration: underline;">Google API Services User Data Policy</a>, including the <strong>Limited Use</strong> requirements.</p>
             </div>
 
             <ul>
-                <li><strong>Scope of Access:</strong> We strictly request the dedicated application permission (<code>drive.file</code> scope). Phone2Pc only creates, reads, and updates files and backup archives that were created directly by Phone2Pc itself. The App does <em>not</em> have permission to view, read, modify, or delete any other personal files, folders, or photos in your Google Drive.</li>
-                <li><strong>Purpose of Access:</strong> Google Drive integration is used strictly to upload files, backup data, or synchronize clipboard packages between your authorized devices at your explicit direction.</li>
-                <li><strong>No Third-Party Transmission:</strong> Your Google authentication tokens, profile details, and synchronized file contents are never transmitted to third parties, advertising networks, or analytics servers. Communication occurs directly between your device and Google's official Drive endpoints over secure HTTPS.</li>
-                <li><strong>No AI Model Training:</strong> None of your Google user data or synchronized files are ever used to train, develop, or improve generalized artificial intelligence (AI) or machine learning (ML) models.</li>
+                <li><strong>Strictly Limited Scope (<code>drive.file</code>):</strong> Phone2PC only requests access to files that were directly created by Phone2PC itself within its dedicated transit synchronization folder (<code>Phone2PC_Sync</code>). The App has absolutely no access to scan, view, modify, or delete any unrelated personal files, photos, or documents residing in your Google Drive.</li>
+                <li><strong>Transit-Only Lifecycle:</strong> Files and text payloads uploaded to the designated device inbox (e.g., <code>Phone2PC_Sync/to_{deviceId}/</code>) serve solely as transient packages waiting for the target device to pull and complete download. Once delivered, the intermediate files fulfill their lifecycle.</li>
+                <li><strong>No Proprietary Central Servers:</strong> All cloud communications take place exclusively and directly between your personal device and Google's official Drive API endpoints over secure HTTPS. We do not host intermediary servers that inspect, copy, or store your transmitted content.</li>
+                <li><strong>No Commercial Monetization & No AI Training:</strong> None of your Google user data or transferred files are ever sold, shared with third-party advertisers, or used to train or tune machine learning (ML) or artificial intelligence (AI) models.</li>
             </ul>
 
-            <h2>3. Device Permissions Requested</h2>
+            <h2>3. Device Permissions Used & Purpose</h2>
             <ul>
-                <li><strong>Storage / Media:</strong> Required to select files, documents, and photos on your device for transfer to your PC or for cloud backup.</li>
-                <li><strong>Network / Internet:</strong> Required to establish local Wi-Fi transfers with your PC and to communicate securely with Google Drive API endpoints.</li>
-                <li><strong>Notifications (Optional):</strong> Used to notify you of file transfer progress, successful completions, or transfer errors in the background.</li>
+                <li><strong>Storage / Media Access:</strong> Required strictly to allow you to select files/photos to send to your PC, and to save incoming files received from your PC into your chosen download directory (e.g., <code>Downloads/Phone2PC</code>).</li>
+                <li><strong>Network & Wi-Fi:</strong> Required to establish local peer-to-peer sockets with your PC on the local network, and to communicate securely with Google Drive API endpoints when using the relay feature.</li>
+                <li><strong>Notifications (Optional):</strong> Used solely to provide foreground status of active background transfers, incoming file alerts, and local IP change reminders.</li>
             </ul>
 
             <h2>4. Data Retention, Management & Revocation</h2>
             <ul>
-                <li>You maintain full ownership and control over all transmitted files. Transferred files are saved directly to your destination folders and can be deleted at any time.</li>
-                <li>Any cloud sync files placed in your Google Drive can be managed or deleted directly through the Google Drive interface.</li>
-                <li>You may disconnect and immediately revoke Phone2Pc's access to your Google Account at any moment via your <a href="https://myaccount.google.com/permissions" target="_blank" style="color: var(--primary); font-weight: 600;">Google Account Permissions Settings</a>.</li>
+                <li><strong>Local Files:</strong> All files downloaded onto your device are stored in your local storage and can be deleted, moved, or managed at your sole discretion.</li>
+                <li><strong>Relay Folder Management:</strong> You can inspect or clear the transit folder (<code>Phone2PC_Sync</code>) directly in your Google Drive web interface at any time.</li>
+                <li><strong>Account Disconnection:</strong> You can sign out inside the App or revoke Phone2PC's access to your Google Account at any moment via your <a href="https://myaccount.google.com/permissions" target="_blank" style="color: var(--primary); font-weight: 600;">Google Account Security Dashboard</a>.</li>
             </ul>
 
             <h2>5. Contact Us</h2>
-            <p>If you have any questions, suggestions, or concerns regarding this Privacy Policy or your data security, please feel free to reach out:</p>
+            <p>If you have any questions or feedback regarding this Privacy Policy or your data security, please feel free to contact:</p>
             
             <div class="contact-box">
                 <p><strong>Developer:</strong> Li Jane</p>
                 <p><strong>Email:</strong> <a href="mailto:hwjane@gmail.com" style="color: var(--primary);">hwjane@gmail.com</a></p>
-                <p><strong>Application:</strong> Phone2Pc</p>
+                <p><strong>Application:</strong> Phone2PC</p>
             </div>
         </div>
     </div>
 
     <footer>
-        <p>&copy; 2026 Phone2Pc. All rights reserved.</p>
+        <p>&copy; 2026 Phone2PC. All rights reserved.</p>
         <p style="margin-top: 0.5rem;">
             <a href="index.html">Home</a> &bull; 
             <a href="privacy.html">Privacy Policy</a>
